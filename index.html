@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 自動控制</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+    header {
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px 20px;
+        text-align: center;
+    }
+    nav {
+        background-color: #333;
+        overflow: hidden;
+    }
+    nav a {
+        float: left;
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+    }
+    nav a:hover {
+        background-color: #ddd;
+        color: black;
+    }
+    .content {
+        padding: 20px;
+    }
+    .hidden {
+        display: none;
+    }
+</style>
+<script>
+    function showContent(sectionId) {
+        const sections = document.querySelectorAll('.content > div');
+        sections.forEach(section => {
+            section.classList.add('hidden');
+        });
+        document.getElementById(sectionId).classList.remove('hidden');
+    }
+</script>
+</head>
+<body>
+
+<header>
+    <h1>AI 自動控制</h1>
+</header>
+
+<nav>
+    <a href="javascript:void(0);" onclick="showContent('summary')">專題摘要</a>
+    <a href="javascript:void(0);" onclick="showContent('introduction')">緒論</a>
+    <a href="javascript:void(0);" onclick="showContent('literature')">文獻探討</a>
+    <a href="javascript:void(0);" onclick="showContent('system')">系統設計與方案</a>
+    <a href="javascript:void(0);" onclick="showContent('experiment')">實驗與結果分析</a>
+    <a href="javascript:void(0);" onclick="showContent('conclusion')">結論與未來展望</a>
+    <a href="javascript:void(0);" onclick="showContent('team')">專題團隊</a>
+</nav>
+
+<div class="content">
+    <div id="summary">
+        <h2>專題摘要</h2>
+        <p>計畫名稱：AI 自動控制系統設計與應用 —— 以智慧風扇/燈光控制為例</p>
+    </div>
+    <div id="introduction" class="hidden">
+        <h2>緒論</h2>
+        <p>隨著物聯網（IoT）與人工智慧（AI）的快速發展，越來越多日常設備朝向智慧化、自動化發展。本計畫旨在結合感測器、微控制器與 AI 模型，設計一套能自動判斷環境並作出對應控制的智慧裝置，提升生活品質與能源效率。</p>
+    </div>
+    <div id="literature" class="hidden">
+        <h2>文獻探討</h2>
+        <p>本專題將探討相關技術文獻，包括感測器技術、AI 模型訓練與應用案例。</p>
+    </div>
+    <div id="system" class="hidden">
+        <h2>系統設計與方案</h2>
+        <h3>系統架構</h3>
+        <ul>
+            <li>感測模組：溫度、光照、人體紅外線感測器等</li>
+            <li>控制模組：ESP32 / Raspberry Pi（或 Arduino + AI 模組）</li>
+            <li>執行裝置：風扇、燈光、電動窗簾等</li>
+            <li>AI 模組：可使用 TensorFlow Lite 或 Edge Impulse 訓練簡單模型（例如人體活動判斷、自動開關）</li>
+        </ul>
+        <h3>功能設計</h3>
+        <ul>
+            <li>使用感測器即時監控環境資訊（溫度、亮度、是否有人）</li>
+            <li>利用 AI 模型判斷場景（如有人進入房間，溫度過高）</li>
+            <li>自動控制設備（開風扇、開燈、調整風速亮度）</li>
+            <li>搭配 OLED 顯示器或手機 App 顯示狀態與調整參數</li>
+        </ul>
+        <h3>開發工具與技術</h3>
+        <ul>
+            <li>編程語言：Python（AI訓練）+ C/C++（Arduino 控制）</li>
+            <li>AI 模型：決策樹 / CNN（邊緣運算）</li>
+            <li>使用平台：Arduino IDE / PlatformIO / TensorFlow Lite</li>
+        </ul>
+    </div>
+    <div id="experiment" class="hidden">
+        <h2>實驗與結果分析</h2>
+        <h3>時程規劃（約16週）</h3>
+        <table border="1">
+            <tr>
+                <th>週次</th>
+                <th>內容</th>
+            </tr>
+            <tr>
+                <td>1~2</td>
+                <td>資料蒐集、技術調研</td>
+            </tr>
+            <tr>
+                <td>3~4</td>
+                <td>硬體選型與感測模組測試</td>
+            </tr>
+            <tr>
+                <td>5~6</td>
+                <td>AI 模型初步訓練與驗證</td>
+            </tr>
+            <tr>
+                <td>7~9</td>
+                <td>系統整合（控制與模型結合）</td>
+            </tr>
+            <tr>
+                <td>10~12</td>
+                <td>實驗與優化</td>
+            </tr>
+            <tr>
+                <td>13~14</td>
+                <td>外殼與介面設計</td>
+            </tr>
+            <tr>
+                <td>15~16</td>
+                <td>成果展示與專題報告撰寫</td>
+            </tr>
+        </table>
+    </div>
+    <div id="conclusion" class="hidden">
+        <h2>結論與未來展望</h2>
+        <p>一套具備 AI 分析與自動控制功能的智慧環境系統，並可推廣至其他應用場景如智慧教室、工廠自動化等。</p>
+    </div>
+    <div id="team" class="hidden">
+        <h2>專題團隊</h2>
+        <p>本專題由一支多元背景的團隊合作完成，成員包括硬體工程師、軟體開發人員與 AI 模型專家。</p>
+    </div>
+</div>
+
+</body>
+</html>
